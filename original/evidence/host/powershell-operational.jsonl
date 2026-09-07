@@ -1,0 +1,1 @@
+{"event_id": 4104, "timestamp": "2026-07-14T12:00:04Z", "script_name": "Invoke-SyntheticCaseSimulation.ps1", "script_block": "Training simulation: archive synthetic records and send them to the local collector.", "binding": "8d919c5bfb955d01"}

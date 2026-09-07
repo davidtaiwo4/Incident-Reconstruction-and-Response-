@@ -1,0 +1,23 @@
+From: Northstar Support <support-v1@example.invalid>
+To: analyst1@northstar.invalid
+Subject: Case export reconciliation 8d919c5b
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============0857132362022640827=="
+
+--===============0857132362022640827==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Please review the attached fictional case-export instructions in the isolated=
+ training lab.
+
+--===============0857132362022640827==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="case-instructions-8d919c5b.txt"
+MIME-Version: 1.0
+
+RXZpZGVuY2UgYmluZGluZzogOGQ5MTljNWJmYjk1NWQwMQpNYXJrZXI6IFVCSS1BOS1TSEFSRUQt
+QjEK
+
+--===============0857132362022640827==--
