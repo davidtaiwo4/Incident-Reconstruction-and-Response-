@@ -1,0 +1,33 @@
+{
+  "source_pcap": "original/evidence/network/incident.pcap",
+  "files_log_locator": "files.log fuid=FhLfWC4EZprxS3AYrc",
+  "archive_path": "recovered/case-export.zip",
+  "archive_sha256": "8e994147097a29a84a1b162cc2aaae6f5592ff135406aaca9c1668d512b98825",
+  "archive_size_bytes": 53891,
+  "members": [
+    {
+      "filename": "synthetic-records.csv",
+      "compressed_size": 53618,
+      "uncompressed_size": 243191,
+      "sha256": "622bdcfbf85d51b1cdf45e26f5cd016a998d0e220fbb9a21b104278f4b0af99f",
+      "csv_record_counts": {
+        "header": [
+          "record_id",
+          "customer_ref",
+          "case_type",
+          "region"
+        ],
+        "data_row_count": 5137,
+        "total_row_count": 5138
+      }
+    },
+    {
+      "filename": "evidence-marker.txt",
+      "compressed_size": 19,
+      "uncompressed_size": 17,
+      "sha256": "eaf231447870009620dd3a4611ae0eff695965c3443fa21b260595562c03cf02"
+    }
+  ],
+  "zip_integrity_ok": true,
+  "file_count": 2
+}

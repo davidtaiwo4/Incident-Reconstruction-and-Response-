@@ -1,5 +1,5 @@
 """Generic inspection of a recovered binary candidate: hash, size, magic
-bytes, and — if it's actually a zip — its internal file list and per-entry
+bytes, and if it's actually a zip its internal file list and per-entry
 sizes. Makes no claim about whether this IS the exfiltrated archive; that
 determination and its evidence chain belong in evidence-index.csv.
 
