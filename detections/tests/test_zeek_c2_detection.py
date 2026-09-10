@@ -7,7 +7,7 @@ import tempfile
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-ZEEK_SCRIPT = PROJECT_ROOT / "detections" / "zeek" / "detect-c2-domain.zeek"
+ZEEK_SCRIPT = PROJECT_ROOT / "detections" / "detection-rules" / "zeek" / "detect-c2-domain.zeek"
 POSITIVE_PCAP = PROJECT_ROOT / "original" / "evidence" / "network" / "incident.pcap"
 NEGATIVE_PCAP = PROJECT_ROOT / "detections" / "tests" / "fixtures" / "benign-traffic.pcap"
 
