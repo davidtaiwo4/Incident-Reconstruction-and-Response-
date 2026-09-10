@@ -1,0 +1,4 @@
+[
+  {"Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "ParentImage": "C:\\Windows\\explorer.exe"},
+  {"Image": "C:\\Windows\\System32\\tar.exe", "ParentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"}
+]

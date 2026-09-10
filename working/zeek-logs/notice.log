@@ -1,0 +1,10 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	notice
+#open	2026-09-10-13-42-21
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	email_dest	suppress_for	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
+#types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	set[string]	interval	string	string	string	double	double
+1784030404.004000	C7cOHi2rvKUP6w7EX	10.71.40.161	49027	203.0.113.195	8443	-	-	-	tcp	C2_Domain_Contacted	Outbound HTTP request to known C2 domain: sync-v1.updates-example.invalid	-	10.71.40.161	203.0.113.195	8443	-	-	Notice::ACTION_LOG	(empty)	3600.000000	-	-	-	-	-
+#close	2026-09-10-13-42-21

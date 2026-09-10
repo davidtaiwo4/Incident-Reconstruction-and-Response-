@@ -1,0 +1,5 @@
+[
+  {"Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe", "ParentImage": "C:\\Program Files\\Microsoft Office\\WINWORD.EXE"},
+  {"Image": "C:\\Windows\\System32\\tar.exe", "ParentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"},
+  {"Image": "C:\\Windows\\System32\\curl.exe", "ParentImage": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"}
+]

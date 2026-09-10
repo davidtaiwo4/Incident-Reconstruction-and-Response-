@@ -1,0 +1,45 @@
+title: Office Document Spawns Script Interpreter Leading to Archive Creation and Outbound Transfer
+id: 7c1e9f3a-2b4d-4e5f-9a1b-6d8c7e2f0a11
+status: experimental
+description: >
+  Detects a process chain where an Office application spawns a script
+  interpreter, which creates a scheduled task, archives files, and
+  initiates an outbound network connection — consistent with a
+  phishing-delivered macro leading to staged exfiltration.
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  office_spawns_script:
+    ParentImage|endswith:
+      - 'WINWORD.EXE'
+      - 'EXCEL.EXE'
+      - 'OUTLOOK.EXE'
+    Image|endswith:
+      - 'powershell.exe'
+      - 'pwsh.exe'
+  archive_from_script:
+    ParentImage|endswith:
+      - 'powershell.exe'
+      - 'pwsh.exe'
+    Image|endswith:
+      - 'tar.exe'
+      - '7z.exe'
+      - 'zip.exe'
+  outbound_from_script:
+    ParentImage|endswith:
+      - 'powershell.exe'
+      - 'pwsh.exe'
+    Image|endswith:
+      - 'curl.exe'
+      - 'certutil.exe'
+  condition: office_spawns_script or archive_from_script or outbound_from_script
+falsepositives:
+  - Legitimate document-automation tooling that shells out to PowerShell
+  - IT-approved backup scripts using tar/7z from PowerShell
+level: high
+tags:
+  - attack.execution
+  - attack.t1204.002
+  - attack.t1560
+  - attack.exfiltration
