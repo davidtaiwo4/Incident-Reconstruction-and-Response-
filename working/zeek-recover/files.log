@@ -3,9 +3,9 @@
 #empty_field	(empty)
 #unset_field	-
 #path	files
-#open	2026-09-11-01-16-34
+#open	2026-09-11-12-44-55
 #fields	ts	fuid	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
 #types	time	string	string	addr	port	addr	port	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
-1784030404.004000	FhLfWC4EZprxS3AYrc	CiYfiPzKnd3UWVZk2	10.71.40.161	49027	203.0.113.195	8443	HTTP	0	EXTRACT	application/zip	-	45.045000	T	T	53891	53891	0	0	F	-	-	-	-	extract-1784030404.004-HTTP-FhLfWC4EZprxS3AYrc	F	-
-1784030450.050000	FSutri15ONC5JFzNff	CiYfiPzKnd3UWVZk2	10.71.40.161	49027	203.0.113.195	8443	HTTP	0	EXTRACT	-	-	0.000000	T	F	8	8	0	0	F	-	-	-	-	extract-1784030450.05-HTTP-FSutri15ONC5JFzNff	F	-
-#close	2026-09-11-01-16-34
+1784030404.004000	FhLfWC4EZprxS3AYrc	Cyn7uz3qJCjMPiUNq	10.71.40.161	49027	203.0.113.195	8443	HTTP	0	EXTRACT	application/zip	-	45.045000	T	T	53891	53891	0	0	F	-	-	-	-	extract-1784030404.004-HTTP-FhLfWC4EZprxS3AYrc	F	-
+1784030450.050000	FSutri15ONC5JFzNff	Cyn7uz3qJCjMPiUNq	10.71.40.161	49027	203.0.113.195	8443	HTTP	0	EXTRACT	-	-	0.000000	T	F	8	8	0	0	F	-	-	-	-	extract-1784030450.05-HTTP-FSutri15ONC5JFzNff	F	-
+#close	2026-09-11-12-44-55

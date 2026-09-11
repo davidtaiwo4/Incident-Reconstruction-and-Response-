@@ -103,6 +103,8 @@ def main():
     report_path = RECOVERED_DIR / "recovery-report.json"
     report_path.write_text(json.dumps(report, indent=2))
 
+    print(f"\nWrote archive: {final_zip_path} ({len(zip_bytes)} bytes, sha256={zip_sha256})")
+    print(f"Wrote report: {report_path}\n")
     print(json.dumps(report, indent=2))
 
 
