@@ -4,7 +4,7 @@
 
 This project reconstructs a sealed, multi-source security incident — host process logs, PowerShell operational logs, a phishing email and a real packet capture — into a single, deterministic super-timeline, built entirely by code. A version-aware parser normalizes all four evidence types into one common schema, preserving the exact raw locator for every event, and an unattended pipeline recreates the same 100,006-row timeline from a clean checkout every time it is run.
 
-The pipeline is validated against all 12 published fixture tests covering event classification, clock normalization, deduplication, damaged-record quarantine, and manifest-tamper detection, and separately confirmed against the real evidence itself: zero duplicate events, zero malformed timestamps, and zero network-protocol anomalies were found across all 100,000 host records and the full packet capture, after specifically checking for them rather than assuming their absence. The recovered exfiltration archive — 53,891 bytes, 5,137 records — was independently reconstructed two separate ways, once through Zeek's file-extraction framework and once through a raw packet reassembly built from nothing, and both methods agree on the exact same bytes down to the offset. One detection rule per available evidence type (Sigma for host behavior, Zeek for network C2) was written and tested against both a positive case and a constructed negative case, and containment and recovery automation was built to require explicit confirmation before changing any state.
+The pipeline is validated against all 12 published fixture tests covering event classification, clock normalization, deduplication, damaged-record quarantine, and manifest-tamper detection, and separately confirmed against the real evidence itself: zero duplicate events, zero malformed timestamps, and zero network-protocol anomalies were found across all 100,000 host records and the full packet capture, after specifically checking for them rather than assuming their absence. The recovered exfiltration archive: 53,891 bytes, 5,137 records — was independently reconstructed two separate ways, once through Zeek's file-extraction framework and once through a raw packet reassembly built from nothing, and both methods agree on the exact same bytes down to the offset. One detection rule per available evidence type (Sigma for host behavior, Zeek for network C2) was written and tested against both a positive case and a constructed negative case, and containment and recovery automation was built to require explicit confirmation before changing any state.
  
 
 During investigation, the phishing email received by an employee at NorthStar was discovered which led to a malicious document being opened on a single workstation (NS-WKS-101). Opening it triggered a PowerShell script that installed a disguised scheduled task for persistence, packaged a customer-data file into a zip archive, and uploaded that archive to an external server — the entire sequence took under a minute and was then partially cleaned up by deleting the local copy.
@@ -15,15 +15,15 @@ The investigation also had to correct a nearly 24-hour clock error on the affect
 
 Two honest gaps remain: the exact malicious document that was opened was never recovered (only strong circumstantial evidence ties the email to what happened next), and no second data-integrity issue was found despite specifically looking for one. Both are stated plainly in the findings rather than glossed over.
 
-Recommendation: treat this as a contained, single-host incident. Block the confirmed attacker domain and IP, remove the identified scheduled task, and re-image the affected machine rather than attempting manual cleanup — ready-to-run scripts for both steps are included and require explicit confirmation before making any change.
+Recommendation: treat this as a contained, single-host incident. Block the confirmed attacker domain and IP, remove the identified scheduled task, and re-image the affected machine rather than attempting manual cleanup; ready-to-run scripts for both steps are included and require explicit confirmation before making any change.
 
 
 ## Tool and OS versions
 - Python: 3.12.3
-- Zeek: 8.2.2 (installed via openSUSE Build Service security:zeek repo — not in default Ubuntu apt)
+- Zeek: 8.2.2 
 - pytest: 9.1.1
 - scapy: 2.7.0
-- oletools: 0.60.2 (provisioned; not applicable to this variant's email attachment — see known limitations)
+- oletools: 0.60.2 (provisioned; not applicable to this variant's email attachment)
 - Host OS: Ubuntu (WSL2)
 
 ## What it is
