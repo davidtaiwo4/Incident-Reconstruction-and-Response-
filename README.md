@@ -42,17 +42,8 @@ soc-stage9/                         ← root folder
 
 ├── Makefile                        ← single documented entry point
 
-├── README.md                       ← required deliverable
+├── README.md                  
 
-├── decision-log.md                 ← required deliverable
-
-├── continuity-record.md            ← required deliverable
-
-├── evidence-index.csv              ← required deliverable
-
-├── assessment-manifest.json        ← required deliverable
-
-├── integrity-attestation.md        ← required deliverable
 
 ├── ioc-set.csv                   ← required deliverable
 
@@ -61,11 +52,10 @@ soc-stage9/                         ← root folder
 ├── incident-report.pdf           ← required deliverable
 
 ├── executive-brief.pdf           ← required deliverable
-                 
-├── manifest.sha256                ← generated LAST, after everything else is final
+                
 
 │
-├── original/                      ← sealed evidence, read-only
+├── original/                      ← private sealed evidence, read-only
 
 │   └── evidence/
 
@@ -86,10 +76,6 @@ soc-stage9/                         ← root folder
 
 │   ├── zeek-logs/               ← conn.log, http.log, files.log, extracted-files/
 
-│   ├── zeek-negative-test/
-│   ├── zeek-recover/
-│   └── pcap-integrity-check/
-
 │
 ├── timeline-builder/ ← required deliverable (folder)
 
@@ -101,15 +87,10 @@ soc-stage9/                         ← root folder
 
 │ ├── build_timeline.py ← single entry point — writes ../timeline.csv
 
-│ └── parsers/
-│ ├── sysmon.py
-│ ├── powershell.py
-│ ├── email.py
-
 │ └── zeek.py ← shared parser for conn/http/files/dns Zeek logs
 
 │
-├── recovered/ ← required deliverable
+├── recovered/ 
 
 │ ├── recover.py ← single entry point: pcap → hashed/counted/extracted archive
 
@@ -126,13 +107,6 @@ soc-stage9/                         ← root folder
 
 │ └── detection-rules/
 
-│     ├── sigma/
-
-│     │ └── suspicious-office-to-archive-exfil-chain.yml
-
-│     ├── zeek/
-│     │ └── detect-c2-domain.zeek
-
 │ └── tests/
 
 │   ├── fixtures/
@@ -146,18 +120,6 @@ soc-stage9/                         ← root folder
 │
 ├── response/                    ← containment + recovery runbooks (sibling to detections/)
 
-│  ├── containment/
-
-│   │ ├── block-c2-indicators.sh   ← dry-run by default; --apply to execute
-
-│   │ ├── remove-persistence.ps1   ← dry-run by default; -Confirm to execute
-
-│  │ └── tests/
-│     │ └── test_containment_scripts.py
-
-│  └── recovery/
-
-│     └── restore-host-checklist.md
 │
 ├── queries/                ← required deliverable
 
@@ -167,22 +129,11 @@ soc-stage9/                         ← root folder
 
 ├── scripts/             ← reusable analysis/recon tooling
 
-│   ├── extract-files.zeek
-│   ├── extract_raw_tcp_payload.py
-│   ├── inspect_recovered_candidate.py
-│   ├── find_clock_offsets.py
-│   └── build_benign_pcap.py
-│
 
 └── tests/                  ← required deliverable
 
 ├── test_public_fixtures.py ← all 12 published fixtures
 
-├── test_sysmon_parser.py
-├── test_powershell_parser.py
-├── test_email_parser.py
-├── test_zeek_parser.py
-└── test_recover.py
 
 ## Exact reproduction order
 All commands below run from `soc-stage9/` (root folder).
